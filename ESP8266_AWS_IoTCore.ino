@@ -4,12 +4,12 @@
 #include <NTPClient.h>
 #include <WiFiUdp.h>
 // Update these with values suitable for your network.
-const char* ssid = "CMERI";
+const char* ssid = "ssid";
 const char* password = "12345678";
 
 WiFiUDP ntpUDP;
-NTPClient timeClient(ntpUDP, "172.16.0.10");
-const char* endpoint = "172.16.0.10"; //MQTT broker ip
+NTPClient timeClient(ntpUDP, "time.ntp.org");
+const char* endpoint = "aws.mqtt.com"; //MQTT broker ip
 void callback(char* topic, byte* payload, unsigned int length) {
 Serial.print("Message arrived [");
 Serial.print(topic);
