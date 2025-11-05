@@ -1,0 +1,38 @@
+; PlatformIO configuration file for ESP8266 MQTT TLS Client
+; Copy this file to platformio.ini in your PlatformIO project directory
+
+[env:nodemcuv2]
+platform = espressif8266
+board = nodemcuv2
+framework = arduino
+
+; ESP8266 Core version - use 3.0.2 or newer for BearSSL support
+; For older API (2.7.x), you may need to use the Arduino IDE version
+platform_packages = 
+    platformio/toolchain-xtensa @ ^2.40802.0
+    platformio/framework-arduinoespressif8266 @ ^3.20704.0
+
+; Required libraries
+lib_deps = 
+    knolleary/PubSubClient@^2.8
+    arduino-libraries/NTPClient@^3.2.1
+
+; Serial monitor speed
+monitor_speed = 115200
+
+; Filesystem type (LittleFS for ESP8266 Core 3.x)
+board_build.filesystem = littlefs
+
+; Build flags for ESP8266
+build_flags = 
+    -D ARDUINO_ESP8266_RELEASE_3_0_0
+    -D CORE_DEBUG_LEVEL=3
+
+; Upload settings
+upload_speed = 921600
+
+; Note: 
+; - Certificates should be placed in the 'data' folder
+; - Use PlatformIO's filesystem upload tool to flash certificates:
+;   pio run --target uploadfs
+

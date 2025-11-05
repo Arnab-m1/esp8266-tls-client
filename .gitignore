@@ -1,0 +1,53 @@
+# Arduino build artifacts
+*.hex
+*.elf
+*.bin
+build/
+*.build/
+
+# Arduino CLI and temporary directories
+bin/
+esp-dht11/
+esp8266-tls-client/
+test-platformio/
+
+# Arduino IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# SPIFFS data files (certificates - sensitive data)
+data/
+*.der
+*.pem
+*.key
+*.crt
+*.cert
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+get-pip.py
+get-platformio.py
+test-compile.sh
+
+# Python virtual environments
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# PlatformIO build artifacts
+.pio/
+
